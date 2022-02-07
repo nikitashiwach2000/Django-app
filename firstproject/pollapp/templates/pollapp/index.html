@@ -1,0 +1,14 @@
+{% if latest_question_list %}
+    <ul>
+    {% for questions in latest_question_list %}
+        <li><a href="{% url 'pollapp:detail' questions.id %}">{{ questions.question_test }}{{questions.pk }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'pollapp/style.css' %}">
+
+print("index")
